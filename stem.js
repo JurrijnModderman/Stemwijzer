@@ -4,4 +4,4 @@ function start() {
 	});
 }
 
-// 
+// functions met wat er moet komen voor de
