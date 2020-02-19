@@ -4,4 +4,9 @@ function start() {
 	});
 }
 
-// functions met wat er moet komen voor de
+//
+//
+//
+// punten geven
+// vergelijken met andere partijen
+// 
