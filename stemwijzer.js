@@ -1,3 +1,14 @@
+//to give the question back
+function nextquestion(){
+  var nextquestion = subjects[Object.keys(subjects)[index++]]
+    console.log(nextquestion.title);
+}
+
+var index = 0;
+
+
+
+//
 var parties = [{
     name: "VVD",
     secular: true,
