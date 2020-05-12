@@ -1,10 +1,30 @@
 //to give the question back
-function nextquestion(){
+var index = 0;
+var resultnameparties = [];
+
+function nextquestion(wholeresult){
   var nextquestion = subjects[Object.keys(subjects)[index++]]
-    console.log(nextquestion.title);
+    //console.log(nextquestion.title);
+    document.getElementById("title").innerHTML = nextquestion.title;
+    document.getElementById("statement").innerHTML = nextquestion.statement;
+    //window.location.href='question.html'
+    nextquestion.parties.forEach(function(answers){
+      //console.log(answers.position);
+      if (answers.position == wholeresult){
+        //console.log(answers);
+        resultnameparties.push(answers.name);
+      }
+    })
+    if (index == subjects.length) {
+         result();
+    }
+      //console.log(wholeresult);
 }
 
-var index = 0;
+function result(){
+  console.log(resultnameparties);
+  
+}
 
 
 

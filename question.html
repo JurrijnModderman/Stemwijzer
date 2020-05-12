@@ -12,9 +12,11 @@
         <div class=" content-inside">
             <div id='homePage'>
                 <header class="w3-container header-container">
-               		<button onclick="nextquestion()" style=background-color:black><p style="color:white">Eens</p></button>
-                	<button onclick="nextquestion()" style=background-color:black><p style="color:white">Geen van beide</button>
-                	<button onclick="nextquestion()" style=background-color:black><p style="color:white">Oneens</button>
+                	<div id="title"></div>
+                	<div id="statement"></div>
+               		<button onclick="nextquestion('pro')" style=background-color:black><p style="color:white">Eens</p></button>
+                	<button onclick="nextquestion('none')" style=background-color:black><p style="color:white">Geen van beide</button>
+                	<button onclick="nextquestion('contra')" style=background-color:black><p style="color:white">Oneens</button>
                 	
                     <div>
                         
