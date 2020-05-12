@@ -5,6 +5,7 @@ var resultnameparties = [];
 function nextquestion(wholeresult){
   var nextquestion = subjects[Object.keys(subjects)[index++]]
     //console.log(nextquestion.title);
+    
     document.getElementById("title").innerHTML = nextquestion.title;
     document.getElementById("statement").innerHTML = nextquestion.statement;
     //window.location.href='question.html'
@@ -22,8 +23,11 @@ function nextquestion(wholeresult){
 }
 
 function result(){
-  console.log(resultnameparties);
-  
+  //console.log(resultnameparties);
+  parties.forEach(function(Allparties){
+ console.log(resultnameparties.filter( code => code === Allparties.name));
+    })
+
 }
 
 
