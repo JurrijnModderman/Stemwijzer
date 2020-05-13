@@ -1,6 +1,7 @@
 //to give the question back
 var index = 0;
 var resultnameparties = [];
+var savepartienames = [];
 
 function nextquestion(wholeresult){
   var nextquestion = subjects[Object.keys(subjects)[index++]]
@@ -25,10 +26,13 @@ function nextquestion(wholeresult){
 function result(){
   //console.log(resultnameparties);
   parties.forEach(function(Allparties){
- console.log(resultnameparties.filter( code => code === Allparties.name));
-    //nog niks waar ik in kan kijken. kijken waar het hoogste aantal is en dan die als resultaat weergeven
-    })
-
+  //console.log(resultnameparties.filter( code => code === Allparties.name));
+    savepartienames.push(resultnameparties.filter( code => code === Allparties.name));
+    // kijken waar het hoogste aantal is en dan die als resultaat weergeven
+  })
+  console.log(savepartienames);
+  var reducefunc = savepartienames.reduce(function(maxI,el,i,arr) {return el.length>arr[maxI].length ? i : maxI;}, 0);
+  if (reducefunc = ) 
 }
 
 
