@@ -26,6 +26,7 @@ function result(){
   //console.log(resultnameparties);
   parties.forEach(function(Allparties){
  console.log(resultnameparties.filter( code => code === Allparties.name));
+    //nog niks waar ik in kan kijken. kijken waar het hoogste aantal is en dan die als resultaat weergeven
     })
 
 }
