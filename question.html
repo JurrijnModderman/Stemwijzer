@@ -8,23 +8,30 @@
 	<script src="stemwijzer.js"></script>
 	<title>Questions</title>
 </head>
-<body>
+<body onload="nextquestion()">
     <div class="w3-container content-wrapper">
         <div class=" content-inside">
-            <div id='homePage'>
+            <div id='Questions'>
                 <header class="w3-container header-container">
+                	<div class="questionback">	
+                	<button onclick="questionback()">Terug</button>
+                	</div>
                 	<div id="title"></div>
                 	<div id="statement"></div>
                		<button onclick="nextquestion('pro')" style=background-color:black><p style="color:white">Eens</p></button>
                 	<button onclick="nextquestion('none')" style=background-color:black><p style="color:white">Geen van beide</button>
                 	<button onclick="nextquestion('contra')" style=background-color:black><p style="color:white">Oneens</button>
-                	<div id='result'>
-                    <div>
-                        
-                    </div>
+                	<button onclick="nextquestion()">Sla deze vraag over</button>	
                 </header>
 
             </div>
+            <div id="resultpage">De partij die het best bij u past: 
+            	<div id='result'></div>
+                	
+                    <div>
+                       <button onclick="window.location.href='stem.html'" style=background-color:black><p style="color:white">Opnieuw stemmen</p></button> 
+                    </div>
+            </div>	
         </div>
     </div>
 </body>

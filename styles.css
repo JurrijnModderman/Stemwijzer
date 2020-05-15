@@ -7,6 +7,12 @@ body {
     position: relative;
   }
   
+  .questionback {
+    float: top-left;
+  }
+
+
+
   .content-wrapper {
     width: 100%;
     margin-top: 26px;

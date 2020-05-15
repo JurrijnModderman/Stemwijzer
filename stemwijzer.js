@@ -4,6 +4,8 @@ var resultnameparties = [];
 var savepartienames = [];
 
 function nextquestion(wholeresult){
+  document.getElementById("Questions").style.display = "block";
+  document.getElementById("resultpage").style.display = "none";
   var nextquestion = subjects[Object.keys(subjects)[index++]]
     //console.log(nextquestion.title);
     
@@ -22,6 +24,31 @@ function nextquestion(wholeresult){
     }
       //console.log(wholeresult);
 }
+
+
+function questionback(){
+   if (index == 0) {
+         // Go back to homepage.
+        window.location.href='Stem.html';
+    }
+    else {
+  var questionback = subjects[Object.keys(subjects)[index = index -1]]
+    //console.log(nextquestion.title);
+    
+    document.getElementById("title").innerHTML = questionback.title;
+    document.getElementById("statement").innerHTML = questionback.statement;
+    //window.location.href='question.html'
+    questionback.parties.forEach(function(answers){
+      //console.log(answers.position);
+      if (answers.position == wholeresult){
+        //console.log(answers);
+        resultnameparties.push(answers.name);
+      }
+    })
+      //console.log(wholeresult);
+        }
+}
+
 
 function result(){
   //console.log(resultnameparties);
@@ -42,6 +69,8 @@ function fullresult(number) {
   document.getElementById("result").innerHTML = totalresult.shift();
   //console.log(reducefunc);
   //getal moet naam van de partij worden en dan als resultaat worden weergeven
+  document.getElementById("Questions").style.display = "none";
+  document.getElementById("resultpage").style.display = "block";
 }
 
 
