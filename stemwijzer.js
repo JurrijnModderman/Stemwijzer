@@ -1,31 +1,26 @@
-//to give the question back
+//making variables
 var index = 0;
 var resultnameparties = [];
 var savepartienames = [];
-
+//making function to save the answers that are given and then go to the next question.
 function nextquestion(wholeresult){
   document.getElementById("Questions").style.display = "block";
   document.getElementById("resultpage").style.display = "none";
   var nextquestion = subjects[Object.keys(subjects)[index++]]
-    //console.log(nextquestion.title);
     
     document.getElementById("title").innerHTML = nextquestion.title;
     document.getElementById("statement").innerHTML = nextquestion.statement;
-    //window.location.href='question.html'
     nextquestion.parties.forEach(function(answers){
-      //console.log(answers.position);
       if (answers.position == wholeresult){
-        //console.log(answers);
         resultnameparties.push(answers.name);
       }
     })
     if (index == subjects.length) {
          result();
     }
-      //console.log(wholeresult);
 }
 
-
+//making a function to go a question back
 function questionback(){
    if (index == 0) {
          // Go back to homepage.
@@ -33,49 +28,37 @@ function questionback(){
     }
     else {
   var questionback = subjects[Object.keys(subjects)[index = index -1]]
-    //console.log(nextquestion.title);
     
     document.getElementById("title").innerHTML = questionback.title;
     document.getElementById("statement").innerHTML = questionback.statement;
-    //window.location.href='question.html'
     questionback.parties.forEach(function(answers){
-      //console.log(answers.position);
       if (answers.position == wholeresult){
-        //console.log(answers);
         resultnameparties.push(answers.name);
       }
     })
-      //console.log(wholeresult);
         }
 }
 
-
+//making a function to calculate the result.
 function result(){
-  //console.log(resultnameparties);
   parties.forEach(function(Allparties){
-  //console.log(resultnameparties.filter( code => code === Allparties.name));
     savepartienames.push(resultnameparties.filter( code => code === Allparties.name));
-    // kijken waar het hoogste aantal is en dan die als resultaat weergeven
   })
-  console.log(savepartienames);
   var reducefunc = savepartienames.reduce(function(maxI,el,i,arr) {return el.length>arr[maxI].length ? i : maxI;}, 0);
-
+//making a function to give the first item out the set of items back as the result.
 function fullresult(number) {
   return number == savepartienames[reducefunc];
 }
   var totalresult = savepartienames.find(fullresult);
-  console.log(savepartienames.find(fullresult));
-
+  //
   document.getElementById("result").innerHTML = totalresult.shift();
-  //console.log(reducefunc);
-  //getal moet naam van de partij worden en dan als resultaat worden weergeven
   document.getElementById("Questions").style.display = "none";
   document.getElementById("resultpage").style.display = "block";
 }
 
 
 
-
+//
 var parties = [{
     name: "VVD",
     secular: true,
