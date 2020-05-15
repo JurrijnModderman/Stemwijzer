@@ -32,12 +32,21 @@ function result(){
   })
   console.log(savepartienames);
   var reducefunc = savepartienames.reduce(function(maxI,el,i,arr) {return el.length>arr[maxI].length ? i : maxI;}, 0);
-  if (reducefunc = ) 
+
+function fullresult(number) {
+  return number == savepartienames[reducefunc];
+}
+  var totalresult = savepartienames.find(fullresult);
+  console.log(savepartienames.find(fullresult));
+
+  document.getElementById("result").innerHTML = totalresult.shift();
+  //console.log(reducefunc);
+  //getal moet naam van de partij worden en dan als resultaat worden weergeven
 }
 
 
 
-//
+
 var parties = [{
     name: "VVD",
     secular: true,
@@ -3769,3 +3778,4 @@ var subjects = [{
     ]
   }
 ];
+
